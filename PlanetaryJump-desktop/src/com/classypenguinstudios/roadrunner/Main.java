@@ -8,8 +8,8 @@ public class Main {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "PlanetaryJump";
 		cfg.useGL20 = true;
-		cfg.width = 1080;
-		cfg.height = 720;
+		cfg.width = 720;
+		cfg.height = 480;
 		
 		new LwjglApplication(new MyGdxGame(), cfg);
 	}

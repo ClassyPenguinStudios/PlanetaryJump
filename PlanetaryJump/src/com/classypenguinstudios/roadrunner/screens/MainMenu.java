@@ -13,7 +13,8 @@ import com.classypenguinstudios.roadrunner.MyGdxGame;
 public class MainMenu implements Screen{
 	MyGdxGame game;
 	Stage stage;
-	BitmapFont font;
+	BitmapFont whiteFont;
+	BitmapFont blackFont;
 	TextureAtlas atlas;
 	Skin skin;
 	SpriteBatch batch;
@@ -40,7 +41,8 @@ public class MainMenu implements Screen{
 		batch = new SpriteBatch();
 		skin = new Skin();
 		atlas = new TextureAtlas("/data/playgame.pack");
-		
+		whiteFont = new BitmapFont(Gdx.files.internal("/data/game_font_white.fnt"), false);
+		blackFont = new BitmapFont(Gdx.files.internal("/data/game_font_black.fnt"), false);
 		
 	}
 
