@@ -52,7 +52,7 @@ public class SplashScreen implements Screen{
 		splashTexture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
 		
 		splashSprite = new Sprite(splashTexture);
-		splashSprite.setSize(720, 480);
+		splashSprite.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 //		splashSprite.setOrigin(splashSprite.getWidth()/2, splashSprite.getHeight()/2);
 		splashSprite.setX(Gdx.graphics.getWidth()/2 - (splashSprite.getWidth()/2));
 		splashSprite.setY(Gdx.graphics.getHeight()/2 - (splashSprite.getHeight()/2));
