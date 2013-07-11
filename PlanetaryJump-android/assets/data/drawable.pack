@@ -1,0 +1,33 @@
+
+drawable.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+button-lo1-up
+  rotate: false
+  xy: 1, 517
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+button-lo2-up
+  rotate: false
+  xy: 1, 259
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+button-lo2-down
+  rotate: false
+  xy: 515, 517
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+button-lo1-down
+  rotate: false
+  xy: 1, 1
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
