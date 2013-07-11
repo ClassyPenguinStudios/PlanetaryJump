@@ -23,6 +23,11 @@ public class MainMenu implements Screen {
 	Skin skin;
 	SpriteBatch batch;
 	TextButton playGame;
+	TextButton credits;
+	TextButton store;
+	TextButton achievements;
+	int xWidth;
+	int yHeight;
 
 	public MainMenu(MyGdxGame myGdxGame) {
 		this.game = myGdxGame;
@@ -44,24 +49,51 @@ public class MainMenu implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		if (stage == null) {
-			stage = new Stage(Gdx.graphics.getWidth(),
-					Gdx.graphics.getHeight(), false);
+			stage = new Stage(xWidth,
+					yHeight, false);
 		}
 		stage.clear();
 		Gdx.input.setInputProcessor(stage);
-		TextButtonStyle buttonStyle = new TextButtonStyle();
-		buttonStyle.up = skin.getDrawable("unpressed");
-		buttonStyle.down = skin.getDrawable("pressed");
-		buttonStyle.font = whiteFont;
+		TextButtonStyle buttonStyleOne = new TextButtonStyle();
+		buttonStyleOne.up = skin.getDrawable("button-lo1-up");
+		buttonStyleOne.down = skin.getDrawable("button-lo1-down");
+		buttonStyleOne.font = whiteFont;
+		
+		TextButtonStyle buttonStyleTwo = new TextButtonStyle();
+		buttonStyleTwo.up = skin.getDrawable("button-lo2-up");
+		buttonStyleTwo.down = skin.getDrawable("button-lo2-down");
+		buttonStyleTwo.font = whiteFont;
 
-		playGame = new TextButton("", buttonStyle);
-		playGame.setWidth(Gdx.graphics.getWidth() / 3);
-		playGame.setHeight(Gdx.graphics.getHeight() / 6);
-		playGame.setX(Gdx.graphics.getWidth() / 4 - playGame.getWidth() / 2);
-		playGame.setY(Gdx.graphics.getHeight() / 4 - playGame.getHeight() / 2
-				+ Gdx.graphics.getHeight() / 2);
-
+		playGame = new TextButton("START!", buttonStyleOne);
+		playGame.setWidth(xWidth / 3);
+		playGame.setHeight((float)(playGame.getWidth()/2.5));
+		playGame.setX(xWidth / 4 - playGame.getWidth() / 2);
+		playGame.setY(yHeight / 4 - playGame.getHeight() / 2
+				+ yHeight / 6);
+		
+		credits = new TextButton("CREDITS", buttonStyleTwo);
+		credits.setWidth(xWidth / 3);
+		credits.setHeight((float) (credits.getWidth()/2.5));
+		credits.setX(xWidth / 4 - credits.getWidth() / 2);
+		credits.setY(yHeight / 6 - credits.getHeight() / 2);
+		
+		store = new TextButton("STORE", buttonStyleOne);
+		store.setWidth(xWidth / 3);
+		store.setHeight((float) (store.getWidth()/2.5));
+		store.setX(xWidth - (xWidth / 4 - store.getWidth() / 2) - store.getWidth());
+		store.setY(yHeight / 4 - playGame.getHeight() / 2
+				+ yHeight / 6);
+		
+		achievements = new TextButton("AWARDS", buttonStyleTwo);
+		achievements.setWidth(xWidth / 3);
+		achievements.setHeight((float)(achievements.getWidth()/2.5));
+		achievements.setX(xWidth - (xWidth / 4 - store.getWidth() / 2) - achievements.getWidth());
+		achievements.setY(yHeight / 6 - achievements.getHeight() / 2);
+		
 		stage.addActor(playGame);
+		stage.addActor(credits);
+		stage.addActor(store);
+		stage.addActor(achievements);
 
 		playGame.addListener(new InputListener() {
 			public boolean touchDown(InputEvent event, float x, float y,
@@ -80,8 +112,10 @@ public class MainMenu implements Screen {
 
 	@Override
 	public void show() {
+		xWidth = Gdx.graphics.getWidth();
+		yHeight = Gdx.graphics.getHeight();
 		batch = new SpriteBatch();
-		atlas = new TextureAtlas("data/playgame.pack");
+		atlas = new TextureAtlas("data/drawable.pack");
 		skin = new Skin();
 		skin.addRegions(atlas);
 		whiteFont = new BitmapFont(
