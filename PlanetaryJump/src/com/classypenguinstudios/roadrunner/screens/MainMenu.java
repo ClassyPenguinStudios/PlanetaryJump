@@ -106,6 +106,7 @@ public class MainMenu implements Screen {
 			public void touchUp(InputEvent event, float x, float y,
 					int pointer, int button) {
 				Gdx.app.log("RoadRunner", "touch done at (" + x + ", " + y + ")");
+				game.setScreen(new Game(game));
 			}
 		});
 	}
