@@ -11,5 +11,11 @@ public class BackgroundArticle extends MoveableArticle {
 		this.backgroundDistance = backgroundDistance;
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

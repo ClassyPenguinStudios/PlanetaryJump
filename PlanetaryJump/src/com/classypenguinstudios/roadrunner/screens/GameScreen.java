@@ -2,17 +2,23 @@ package com.classypenguinstudios.roadrunner.screens;
 
 import com.badlogic.gdx.Screen;
 import com.classypenguinstudios.roadrunner.MyGdxGame;
+import com.classypenguinstudios.roadrunner.view.World;
+import com.classypenguinstudios.roadrunner.view.WorldRenderer;
 
-public class Game implements Screen{
+public class GameScreen implements Screen{
 	MyGdxGame game;
+	World world;
+	WorldRenderer renderer;
 	
-	public Game(MyGdxGame game){
-	this.game = game;	
+	public GameScreen(MyGdxGame game){
+	this.game = game;
+	world = new World(game);
+	renderer = new WorldRenderer(world);
 	}
 	@Override
 	public void render(float delta) {
-		// TODO Auto-generated method stub
-		
+		world.update();
+		renderer.render();
 	}
 
 	@Override
@@ -29,7 +35,7 @@ public class Game implements Screen{
 
 	@Override
 	public void hide() {
-		// TODO Auto-generated method stub
+		dispose();
 		
 	}
 

@@ -13,4 +13,10 @@ public class Car extends MoveableArticle{
 		this.position.x=x;
 	}
 
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

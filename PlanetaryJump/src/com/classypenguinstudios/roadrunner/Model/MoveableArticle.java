@@ -25,6 +25,8 @@ public void setVelocity(Vector2 velocity) {
 	this.velocity = velocity;
 }
 
+public abstract void update();
+
 ///**
 // * @return the speed
 // */
