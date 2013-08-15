@@ -6,9 +6,10 @@ import com.badlogic.gdx.math.Vector2;
 public class Train extends MoveableArticle {
 	public int bodyLength;
 	private Car[] body;
-	private float rotation = 0;
+	boolean gravity;
 	public Train(Vector2 postion, float width, float height, float speed, int bodyLength) {
 		super(postion, width, height, speed);
+		this.gravity = false;
 		this.bodyLength = bodyLength;
 		body = new Car[this.bodyLength];
 		float carHeight = (Gdx.graphics.getHeight()/9);
@@ -26,8 +27,7 @@ public class Train extends MoveableArticle {
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		
+		this.position.add(0, this.velocity.x*gdx.)
 	}
 	
 	public float getRotation(){

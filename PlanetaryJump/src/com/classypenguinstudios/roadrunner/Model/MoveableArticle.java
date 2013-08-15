@@ -3,7 +3,7 @@ package com.classypenguinstudios.roadrunner.Model;
 import com.badlogic.gdx.math.Vector2;
 
 public abstract class MoveableArticle extends Article {
- protected Vector2 velocity;
+ protected Vector2 velocity = new Vector2(0,0);
  protected float speed;
  
  public MoveableArticle(Vector2 postion, float width, float height, float speed){
@@ -15,7 +15,7 @@ public abstract class MoveableArticle extends Article {
  * @return the velocity
  */
 public Vector2 getVelocity() {
-	return velocity;
+	return this.velocity;
 }
 
 /**

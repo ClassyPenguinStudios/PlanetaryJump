@@ -11,8 +11,8 @@ public class World {
 
 	public World(MyGdxGame game) {
 		this.game = game;
-		train = new Train(new Vector2((Gdx.graphics.getWidth() / 2),
-				(Gdx.graphics.getHeight() / 2)), 1, 1, 5f, 5);
+		train = new Train(new Vector2(Gdx.graphics.getWidth()/5,Gdx.graphics.getWidth()/3), 1, 1, 5f, 5);
+		Gdx.input.setInputProcessor(new InputHandler(this));
 	}
 
 	public Train getTrain() {
